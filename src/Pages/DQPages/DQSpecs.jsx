@@ -173,9 +173,9 @@ function DQSpecs({match}) {
         <div className={classes.container}>
           <Card className={classes.content}>
            <div >
-			{
-			purpose ?	<>
-				<Typography variant='h1' align='center' gutterBottom><b>{purpose.name}</b></Typography>
+			
+				<>
+				<Typography variant='h1' align='center' gutterBottom><b>Specifications</b></Typography>
 			<hr />
 			
 			<div style={{display: 'flex',  paddingRight: '3%',marginBottom: '30px', justifyContent: 'flex-end'}}>
@@ -242,19 +242,10 @@ function DQSpecs({match}) {
 					</>
 					}
 					</>
-					 :
-
-					<form onSubmit={handleSubmitNew}>
-						<div style={{padding: '10%', paddingTop: '0'}} >
-						<Typography variant='h1' align='center' gutterBottom><b>Add New Specification Details</b></Typography>	
-						<TextField style={{marginBottom: '20px'}} label='Title' variant='outlined' fullWidth onChange={(e) => setName(e.target.value)}/>
-						<TextField style={{marginBottom: '5%'}} label='Description' multiLine rows={7}  variant='outlined' fullWidth onChange={(e) => setDesc(e.target.value)}/>  
-						<Button type="submit" disabled={ desc>300 || name > 35} fullWidth style={{background: 'orange', color: 'white'}} >Add New</Button>
-					</div>
-					</form>
+					
 			
 		
-		}
+		
 		</div>
 		
           </Card>

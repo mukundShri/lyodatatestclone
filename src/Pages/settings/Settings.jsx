@@ -8,7 +8,9 @@ import EditVideoCall from "./EditVideoCall";
 import Page from "../../components/Page";
 import AddApk from "./AddApk";
 import { useAuth } from "../../components/context/AuthContext";
-
+import AdminProfile from "../../components/AdminProfile/AdminProfile";
+import AddGlass from "./AddGlass";
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 const Settings = () => {
     const [mobile, setMobile] = useState({})
     const [glass, setGlass] = useState({})
@@ -38,58 +40,44 @@ const Settings = () => {
 
     return (
       <Page title='Settings | LyoIms'>
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+              {/* <Typography style={{marginRight: '15px'}} variant='h1' align='center'><b>{mTitle} : </b></Typography> */}
+              <div style={{paddingLeft: '3.8rem'}}
+              >
+                 <Typography variant='h1' align='left'><b>Settings</b></Typography>
+                  <Typography align='left' variant='body2' > You can change configurations of application here </Typography>
+              </div>
+              <div>
+              <div style={{display: 'flex', justifyContent: 'flex-end',  paddingRight: '4.6rem'}}>
+               <Button href={mobile?.url} variant='contained'  endIcon={<PhoneAndroidIcon/>} style={{marginRight:'25px', backgroundColor: 'rgb(42, 181, 0)', color: 'white'}}> Download Mobile Apk</Button>
+               <Button href={glass?.url} variant='contained'  endIcon={<PhoneAndroidIcon/>} style={{ backgroundColor: 'rgb(0, 84, 11)', color: 'white'}} endIcon={<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-eyeglasses" viewBox="0 0 16 16">
+  <path d="M4 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+</svg>}>Download Glass Apk</Button>
+       <hr/>
+         </div>
+              </div>
+            </div>
        {
          user.role === 'Admin'?
-        <section class="text-gray-600 body-font">
-          <div style={{display: 'flex', justifyContent: 'space-between'}}>
-             <Typography variant='h3' gutterBottom align='left'><b>Settings</b></Typography>
-             <Typography variant='body1' gutterBottom align='right'>Web app Version : 1.6.6</Typography>
+         <>
+        <section style={{paddingLeft: '3.8rem'}} className='flex'>
+          <div className='w-1/3 mr-14 mt-14'>
+            {/* <AdminProfile user={user}/> */}
+            <EditNavbar/>
+            <br />
+            <br />
+            <EditVideoCall/>
           </div>
-          <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
-    <div class="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
-      <h2 class="text-xs text-yellow-800 tracking-widest font-medium title-font mb-1">Lyodata APKS</h2>
-      <h1 class="md:text-3xl text-2xl font-medium title-font text-gray-900">Mobile and Glass APK Downloads</h1>
-    </div>
-    <div class="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4">
-      <a href={mobile.url}>
-        <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
-          <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
-        </svg>
-        <span class="ml-4 flex items-start flex-col leading-none">
-          <span class="text-xs text-gray-600 mb-1">Mobile {mobile.version}</span>
-          <span class="title-font font-medium">Download Apk</span>
-        </span>
-      </button>
-      </a>
-      <a href={glass.url}>
-         <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
-          <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
-        </svg>
-        <span class="ml-4 flex items-start flex-col leading-none">
-          <span class="text-xs text-gray-600 mb-1">Glass {glass.version}</span>
-          <span class="title-font font-medium">Download Apk</span>
-        </span>
-      </button>
-      </a>
-      
-     
-    </div>
-  </div>
-</section>
-<AddApk/>
-          <hr />
-          <EditNavbar/>
-          <br />
-          <EditVideoCall/>
-          {
-
-          }
         
-  
+        <AddApk/>
+        <div className='w-6'>
+
+        </div>
+        <AddGlass/>
+ 
 </section>
+
+</>
 : 
 <div>
   No Access

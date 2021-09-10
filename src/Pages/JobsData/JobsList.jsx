@@ -132,21 +132,6 @@ export default function JobsList({match}) {
   })
   }
 
-  // function handleChange(event) {
-  //   db.collection('jobData').where('mid', '==', `${match.params.id}`).onSnapshot(doc => {
-  //     const data = firebaseLooper(doc)
-  //     data.sort(function(a,b){
-      
-  //       return(b.date - a.date)
-  //     })
-  //    data.filter(data => {
-  //      if(data.date.toDate().toString().substring(0,15) === date.toDateString()){
-  //        return data 
-  //      }
-  //    })
-  //     setJob(data)
-  // })
-  // }
   
   return (
  <div style={{paddingLeft: '2.5rem', paddingRight: '2.5rem'}}>
@@ -160,7 +145,7 @@ export default function JobsList({match}) {
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
               {/* <Typography style={{marginRight: '15px'}} variant='h1' align='center'><b>{mTitle} : </b></Typography> */}
               <div>
-                 <Typography variant='h1' align='left'><b>Jobs</b></Typography>
+                 <Typography style={{color: 'black'}} variant='h1' align='left'><b>Jobs</b></Typography>
                <Typography align='left' variant='body2' > These are all the Job status </Typography>
               </div>
              <div>
@@ -170,15 +155,7 @@ export default function JobsList({match}) {
              <div className="absolute top-4 right-3"><SearchIcon style={{opacity: '0.5'}}/>  </div>
          </div>
               
-              {/* <FormControl style={{width: '140px', marginRight: '2%'}} variant='outlined'>
-                <InputLabel variant='outlined'>Assignee</InputLabel>
-                <Select onChange={userHandleChange} label="Assignee">
-                <MenuItem value="">All</MenuItem>
-                {users.map((data) => (
-                  <MenuItem value={data.email}>{data.firstName} {data.lastName}</MenuItem>
-                ))}
-              </Select>
-              </FormControl> */}
+           
               <FormControl style={{width: '140px'}} variant='outlined'>
                 <InputLabel variant='outlined'>Status</InputLabel>
                 <Select onChange={pendingCheck} label="Status">

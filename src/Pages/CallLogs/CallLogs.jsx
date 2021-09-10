@@ -85,7 +85,7 @@ export default function CallLogs({match}) {
       <Card className={classes.content}>
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
            <div>
-             <Typography variant='h2' align='left'><b>Call logs</b></Typography>
+             <Typography style={{color: 'black'}} variant='h1' align='left'><b>Call logs</b></Typography>
              <Typography variant='body-2' align='left'>These are all the call history</Typography>
            </div>
            <div>

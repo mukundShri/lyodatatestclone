@@ -1,0 +1,32 @@
+.admin-profile{
+    width: 50%;
+    padding: 2rem 1rem;
+    display: flex;
+}
+
+.admin-content{
+    padding: 0.5rem;
+    overflow: hidden;
+}
+
+.admin-name{
+    font-size: 32px;
+    color: #464A53;
+    font-weight: 400;
+}
+
+.admin-text{
+    color: #ABAFB3;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    padding: 0px;
+}
+
+@media(min-width:1700px){
+    .admin-profile{
+        width: 40%;
+        padding: 3rem 2rem;
+        display: flex;
+    }
+}

@@ -22,7 +22,7 @@ import animation from '../../assets/images/animation.gif'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import { FormControl, IconButton, Input, InputAdornment, InputLabel, OutlinedInput } from '@material-ui/core';
-
+import illustration from '../../assets/images/illustration.png'
 
 function Copyright() {
   return (
@@ -139,66 +139,125 @@ export default function LogIn() {
   }
 
   return (
-        <div  style={{backgroundColor: 'orange', color: 'white'}}>
+//         <div  style={{backgroundColor: 'orange', color: 'white'}}>
 
-        <div className="bg-yellow-800 font-family-karla h-screen">
+//         <div className="bg-yellow-800 font-family-karla h-screen">
 
-    <div className="w-full flex flex-wrap">
-        <div  className="w-1/2 shadow-2xl  ">
-            <div style={{display:'flex', justifyContent: 'center'}} className="object-cover align-center m-auto w-full h-screen hidden md:block ">
-              {/* <img className='verticalCenter' src={navbar.url} alt="" /> */}
-              <img src={animation} />
-            </div>
-        </div>
-        <div className="w-full   w md:w-1/2 flex flex-col">
+//     <div className="w-full flex flex-wrap">
+//         <div  className="w-1/2 shadow-2xl  ">
+//             <div style={{display:'flex', justifyContent: 'center'}} className="object-cover align-center m-auto w-full h-screen hidden md:block ">
+//               {/* <img className='verticalCenter' src={navbar.url} alt="" /> */}
+//               <img src={animation} />
+//             </div>
+//         </div>
+//         <div className="w-full   w md:w-1/2 flex flex-col">
 
           
           
-            <div data-aos='fade-up-left' data-aos-duration="2000" className="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-36">
-              <div style={{display: 'flex', justifyContent: 'center'}}>
-                  <img src={navbar.url} width='70px' height='70px'/>
+//             <div data-aos='fade-up-left' data-aos-duration="2000" className="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-36">
+//               <div style={{display: 'flex', justifyContent: 'center'}}>
+//                   <img src={navbar.url} width='70px' height='70px'/>
                
-              </div>
-              <p style={{font: 'normal normal bold 40px/21px Montserrat', letterSpacing: '2.36px',  opacity: 1}}  className="text-center text-black font-bold text-xl p-4">
+//               </div>
+//               <p style={{font: 'normal normal bold 40px/21px Montserrat', letterSpacing: '2.36px',  opacity: 1}}  className="text-center text-black font-bold text-xl p-4">
               
-              {navbar.name}</p>
+//               {navbar.name}</p>
             
-            <p style={{font: 'normal normal normal 20px/13px Roboto', opacity: 0.5}} className="text-center text-black text-3xl">Welcome back! Please login to your account.</p>
-                 {error && <b style={{color: 'red'}}>{error}</b>}
-                <form style={{justifyContent: 'center'}} className="flex flex-col pt-3 md:pt-8" onSubmit={handleSubmit}>
+//             <p style={{font: 'normal normal normal 20px/13px Roboto', opacity: 0.5}} className="text-center text-black text-3xl">Welcome back! Please login to your account.</p>
+//                  {error && <b style={{color: 'red'}}>{error}</b>}
+//                 <form style={{justifyContent: 'center'}} className="flex flex-col pt-3 md:pt-8" onSubmit={handleSubmit}>
                    
-                        <TextField
-                         style={{backgroundColor: 'white'}}
-                         InputLabelProps={{
-                          style: { color: 'black' },
-                        }}
-                        InputProps={{
-                          classes: {
-                            root: classes.cssOutlinedInput,
-                            focused: classes.cssFocused,
-                            notchedOutline: classes.notchedOutline,
-                          },
+//                         <TextField
+//                          style={{backgroundColor: 'white'}}
+//                          InputLabelProps={{
+//                           style: { color: 'black' },
+//                         }}
+//                         InputProps={{
+//                           classes: {
+//                             root: classes.cssOutlinedInput,
+//                             focused: classes.cssFocused,
+//                             notchedOutline: classes.notchedOutline,
+//                           },
                          
-                        }}
-                         className='mb-4' variant='outlined'  required onChange={(e) => setEmail(e.target.value)} type="email" id="email" label="Email" />
-                        {/* <ValidationTextField
+//                         }}
+//                          className='mb-4' variant='outlined'  required onChange={(e) => setEmail(e.target.value)} type="email" id="email" label="Email" />
+//                         {/* <ValidationTextField
                       
-                        variant='outlined' type='email' label="Email"  /> */}
-                        <div style={{display: 'flex'}}>
-                          <FormControl 
+//                         variant='outlined' type='email' label="Email"  /> */}
+//                         <div style={{display: 'flex'}}>
+//                           <FormControl 
 
                           
-                          style={{backgroundColor: 'white'}}  required variant='outlined' fullWidth>
-                          <InputLabel style={{color: 'black'}} htmlFor="outlined-adornment-password">Password</InputLabel>
-                          <OutlinedInput  
-                           InputLabelProps={{
-                            style: { color: 'black' },
-                          }}
-                          onChange={(e) => setPassword(e.target.value)} type={passwordOn} id="password" label="Password" 
-                            endAdornment={
-                              <InputAdornment position="end">
+//                           style={{backgroundColor: 'white'}}  required variant='outlined' fullWidth>
+//                           <InputLabel style={{color: 'black'}} htmlFor="outlined-adornment-password">Password</InputLabel>
+//                           <OutlinedInput  
+//                            InputLabelProps={{
+//                             style: { color: 'black' },
+//                           }}
+//                           onChange={(e) => setPassword(e.target.value)} type={passwordOn} id="password" label="Password" 
+//                             endAdornment={
+//                               <InputAdornment position="end">
                                
-                                  { passwordOn === "password" ?
+//                                   { passwordOn === "password" ?
+//                           <IconButton onClick={(e) => setPasswordOn("text")}>
+//                             <VisibilityOffIcon/>
+//                           </IconButton>
+//                           : 
+//                           <IconButton onClick={(e) => setPasswordOn("password")}>
+//                             <VisibilityIcon/>
+//                           </IconButton>
+//                         } 
+                               
+//                               </InputAdornment>
+//                             }
+                          
+//                           />
+//                           </FormControl>
+                        
+                       
+//                         </div>
+                        
+                  
+    
+//                    <button type='submit' style={{backgroundColor: 'black', alignItems: 'center', marginLeft: '25%'}} className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8 w-50 " >Log In</button>
+//                 </form>
+//                 <div className="text-center text-black pt-12 pb-12">
+//                     <p>Don't remember password? <Button component={NavLink} to="/forgotPass" style={{color: 'blue', textDecoration: 'none'}} >Reset Password.</Button></p>
+//                 </div>
+//             </div>
+
+//         </div>
+//     </div>
+
+// </div>
+//         </div>
+<section className="flex flex-col bg-black  items-center h-screen md:flex-row ">
+            <div className="hidden w-1/2 h-screen bg-white lg:block md:w-1/3 lg:w-2/3">
+              <img src={illustration} alt="" className="object-cover w-full h-full"/>
+            </div>
+            <div className="flex items-center justify-center w-full h-screen px-6 bg-black md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12">
+              <div class="w-full mt-32 text-white h-100">
+              <div style={{display: 'flex', justifyContent: 'center'}}>
+                   <img src={navbar.url} width='70px' height='70px'/>
+               
+               </div>
+               <h2 class="text-lg mt-16 text-center font-bold tracking-tighter  text-white uppercase duration-500 ease-in-out transform ttransition hover:text-lightBlue-500 dark:text-blueGray-400"> {navbar.name} </h2>
+               
+                <h1 class="mt-12 text-2xl font-semibold text-white tracking-ringtighter sm:text-3xl title-font">Log in to your account</h1>
+                <form class="mt-6" action="#" onSubmit={handleSubmit} method="POST">
+                {error && <><Alert severity='error'>{error}</Alert>  <br /></>}
+               
+                  <div>
+                    <label class="block text-sm font-medium leading-relaxed tracking-tighter text-blueGray-700">Email Address</label>
+                    <input type="email" onChange={(e) => setEmail(e.target.value)} name="" id="" placeholder="Your Email " class="w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform border-transparent rounded-lg bg-blueGray-100 focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "/>
+                  </div>
+                  <div class="mt-4 relative">
+                    <label class="block text-sm font-medium leading-relaxed tracking-tighter text-blueGray-700">Password</label>
+                    
+                    <input type={passwordOn} name="" onChange={(e) => setPassword(e.target.value)} id="" placeholder="Your Password" minlength="6" class="w-full px-4 py-2 text-base text-black transition duration-500 ease-in-out transform border-transparent rounded-lg bg-blueGray-100 focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 " required=""/>
+                    <div class="absolute inset-y-0 top-6 right-0 flex items-center px-2">
+      <input class="hidden js-password-toggle" id="toggle" type="checkbox" />
+      { passwordOn === "password" ?
                           <IconButton onClick={(e) => setPasswordOn("text")}>
                             <VisibilityOffIcon/>
                           </IconButton>
@@ -208,28 +267,25 @@ export default function LogIn() {
                           </IconButton>
                         } 
                                
-                              </InputAdornment>
-                            }
                           
-                          />
-                          </FormControl>
-                        
-                       
-                        </div>
-                        
-                  
-    
-                   <button type='submit' style={{backgroundColor: 'black', alignItems: 'center', marginLeft: '25%'}} className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8 w-50 " >Log In</button>
-                </form>
-                <div className="text-center text-black pt-12 pb-12">
-                    <p>Don't remember password? <Button component={NavLink} to="/forgotPass" style={{color: 'blue', textDecoration: 'none'}} >Reset Password.</Button></p>
-                </div>
-            </div>
-
-        </div>
     </div>
-
-</div>
-        </div>
+                 </div>
+                  {/* <div class="relative w-full">
+   
+    <input class="appearance-none border-2 rounded w-full py-3 px-3 leading-tight border-gray-300 bg-gray-100 focus:outline-none focus:border-indigo-700 focus:bg-white text-gray-700 pr-16 font-mono js-password" id="password" type="password" autocomplete="off"
+    />
+  </div> */}
+                  <div class="mt-2 text-right">
+                    <NavLink to="/forgotPass" class="text-sm font-semibold leading-relaxed text-blueGray-700 hover:text-gray-600 focus:text-blue-700">Forgot Password?</NavLink>
+                  </div>
+                  <button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-yellow-300 hover:from-gray-300 to-yellow-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 hover:to-black">Log In</button>
+                </form>
+                <hr class="w-full my-6 border-blueGray-300"/>
+                
+              </div>
+            </div>
+           
+          </section>
+        
   );
 }

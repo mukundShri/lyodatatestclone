@@ -77,7 +77,7 @@ function DQNew({match}) {
               <div style={{paddingLeft: '2.2rem'
               }}
               >
-                 <Typography variant='h1' align='left'><b>DQ Master</b></Typography>
+                 <Typography style={{color: 'black'}} variant='h1' align='left'><b>DQ Master</b></Typography>
                   <Typography align='left' variant='body2' > Master Copy of all DQ Reports </Typography>
               </div>
               <div>

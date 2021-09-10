@@ -160,7 +160,7 @@ const Recipes = ({match}) => {
             <div style={{display: 'flex', justifyContent: 'space-between', paddingLeft: '2.2rem'}}>
              
              <div>
-                <Typography variant='h1' align='left'><b>Recipe Data</b></Typography>
+                <Typography style={{color: 'black'}} variant='h1' align='left'><b>Recipe Data</b></Typography>
                  <Typography align='left' variant='body2' > These are all the required Recipe Data </Typography>
              </div>
              <div>

@@ -15,7 +15,7 @@ import Alert from '@material-ui/lab/Alert';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { db } from '../../firebase';
-
+import forgot from '../../assets/images/forgot.png'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -83,50 +83,40 @@ export default function ForgotPass() {
     })
     }, [])
   return (
-     <div>
 
-        <div className="bg-white font-family-karla h-screen">
 
-    <div className="w-full flex flex-wrap">
-    <div style={{backgroundImage: `url("https://firebasestorage.googleapis.com/v0/b/lyodata.appspot.com/o/login%2FGroup%20244.png?alt=media&token=9903cf0f-9a60-4955-93b0-cb057089f561")`}} className="w-1/2 shadow-2xl bg-yellow-800 ">
-            <div className="object-cover w-full h-screen hidden md:block ">
-              <img className='ml-auto mr-auto pt-64' src={navbar.url} alt="" />
+ <section class="flex flex-col bg-black items-center h-screen md:flex-row ">
+            <div class="relative hidden w-full h-screen bg-blueGray-400 lg:block md:w-1/3 xl:w-1/3">
+              <img src={forgot} alt="" class="absolute object-cover w-full h-full"/>
+              <div class="relative z-10 m-12 text-left">
+                <a class="flex items-center   mb-4 font-medium text-blueGray-900 title-font md:mb-10">
+                  {/* <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-yellow-300 to-yellow-600">
+                  </div> */}
+                  <img style={{marginRight: '20px'}} src={navbar.url} width='70px' height='70px'/>
+                  <h2 class="text-lg  font-bold tracking-tighter text-black uppercase transition duration-500 ease-in-out transform hover:text-lightBlack-500 dark:text-lightBlue-400"> {navbar.name} </h2>
+                </a>
+              </div>
             </div>
-        </div>
-        <div className="w-full md:w-1/2 flex flex-col">
-
-            <div className="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
-                
-            </div>
-          
-            <div className="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
-            <p style={{font: 'normal normal bold 40px/21px Montserrat', letterSpacing: '2.36px', color: '#43425D', opacity: 1}}  className="text-center text-black font-bold text-xl p-4">
-              
-              {navbar.name}</p>
-                {/* <p className="text-center text-3xl">Forgot Password?</p> */}
-                <p style={{font: 'normal normal normal 20px/13px Roboto', color: '#4D4F5C', opacity: 0.5}} className="text-center text-3xl">Forgot Password ?</p>
-                 {error && <b style={{color: 'red'}}>{error}</b>}
-                 {message && <b style={{color: 'green'}}>{message}</b>}
-                <form className="flex flex-col pt-3 md:pt-8" onSubmit={handleSubmit}>
-                    <div className="flex flex-col pt-4">
-
-                        <TextField onChange={(e) => setEmail(e.target.value)} type="email" label="Email" required id="email" placeholder="your@email.com" variant='outlined' fullWidth/>
-                    </div>
-    
-                   <button type='submit' style={{backgroundColor: 'orange'}} className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8">Reset Password</button>
-                </form>
-                <div className="text-center pt-12 pb-12">
-                    <p>Made a mistake? <NavLink to="/login" className="underline font-semibold">Login Here</NavLink></p>
+            <div class="flex align-center mt-64 w-full h-screen px-6 bg-whitelack md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12 items-left justify-left">
+              <div class="w-full py-32 lg:py-6 lg:h-100">
+                <h1 class="my-12 font-black tracking-tighter text-white 2xl sm:text-5xl title-font">Reset Password</h1>
+               
+              <form class="mt-6" action="#" method="POST" onSubmit={handleSubmit}>
+              {error && <><Alert severity='error'>{error}</Alert>  <br /></>}
+                <div>
+                  <label class="text-base font-medium leading-relaxed text-gray-100">Email Address</label>
+                  <input onChange={(e) => setEmail(e.target.value)} type="email" name="" id="" placeholder="Your Email " class="w-full px-4 py-2 mt-2 text-base text-blue-700 border-transparent rounded-lg bg-blueGray-100 ext-blue-700 focus:border-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2" autocomplete="" required=""/>
                 </div>
+             
+                <div class="mt-2 text-right">
+    
+                </div>
+                <button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-yellow-300 hover:from-gray-300 to-yellow-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 hover:to-black">Reset </button>
+              </form>
+              <p class="mt-8 text-center">Remembered password? <NavLink to="/login" class="font-semibold text-blue-500 hover:text-blue-400">Log In</NavLink></p>
             </div>
-
         </div>
-
-        
-        
-    </div>
-
-</div>
-        </div>
+  </section>
+  
   );
 }

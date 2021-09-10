@@ -268,7 +268,7 @@ const AddSteps = ({match}) => {
               required
               label="Select Type"
               value={type}
-               required
+             
                 onChange={(e) => setType(e.target.value)}
               >
                 <MenuItem value='info'>Info</MenuItem>

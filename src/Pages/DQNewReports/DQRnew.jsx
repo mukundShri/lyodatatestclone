@@ -70,7 +70,7 @@ function DQRnew({match}) {
               {/* <Typography style={{marginRight: '15px'}} variant='h1' align='center'><b>{mTitle} : </b></Typography> */}
               <div style={{paddingLeft: '2.5rem'}}
               >
-                 <Typography variant='h1' align='left'><b>DQ Reports</b></Typography>
+                 <Typography style={{color: 'black'}} variant='h1' align='left'><b>DQ Reports</b></Typography>
                   <Typography align='left' variant='body2' > These are all the required DQ Reports and data </Typography>
               </div>
               <div>

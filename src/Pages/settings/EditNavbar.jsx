@@ -1,4 +1,4 @@
-import { Container, Typography } from '@material-ui/core'
+import { Container, LinearProgress, Typography } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { db } from '../../firebase'
 import { useSettingsStorage } from '../../utils/useSettingsStorage'
@@ -12,7 +12,7 @@ const EditNavbar = () => {
     
     const [disabled, setDisabled] = useState(true)
       const types = ["image/png", "image/jpeg", "image/jpg"];
-    const doc = "navbar"
+    
     useEffect(() => {
        db.collection('company').doc('navbar').onSnapshot(snapshot => {
         const data = snapshot.data()
@@ -20,7 +20,8 @@ const EditNavbar = () => {
         setNavbar(data)
        })
     }, [])
-    const updateNavbar = (doc) => {
+    const updateNavbar = (e) => {
+      e.preventDefault()
         if(url){
               db.collection("company").doc('navbar').update({name,url})
         }
@@ -46,45 +47,37 @@ const EditNavbar = () => {
     }
     const {progress, url} = useSettingsStorage(file)
     return (
-        <Container>
-            <div class="flex  bg-white-200 items-center justify-center  mt-7 mb-7">
-  <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
-   
+        <>
+           
 
-    <div class="flex justify-center">
-      <div class="flex">
-        <h1 class="text-gray-600 font-bold md:text-2xl text-xl">Change Navbar</h1>
-        {error && <b style={{color: 'red'}}>{error}</b>}
-      </div>
-    </div>
 
-   
+ <div class="bg-white border-4 container  ml-10 w-1/2">
+   <h6>Update Company Details</h6>
+   <div class="bg-white  rounded">
+     <form action="" onSubmit={updateNavbar}>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
-     
-      <div class="grid grid-cols-1">
-        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Company Name</label>
-        <input value={name} onChange={(e) => setName(e.target.value)} class="py-2 px-3 rounded-lg border-2 border-yellow-800 mt-1 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent" type="text" placeholder="Company Name" />
-      </div>
-      <div class="grid grid-cols-1">
-        <label class="uppercase md:text-sm text-xs text-black-500 text-light font-semibold">Company Logo
-        
-        </label>
-         <input onChange={handleChange}  type='file' />
-      </div>
-      
-    </div>
-        <Typography align='center'><b>{progress}% uploaded</b></Typography>
+       <div class="flex items-center mb-5">
+         <label for="name" class="w-20 inline-block text-left mr-4 text-gray-500 text-gray-500">Name</label>
+         <input onChange={(e) => setName(e.target.value)} name="name" id="name" type="text" placeholder="Company Name" class="border-b-2 border-gray-400 flex-1 py-2 placeholder-gray-300 outline-none focus:border-indigo-400"/>
+       </div>
 
-   
-    <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
-      
-      <button  onClick={(e) => updateNavbar(doc)} class='w-auto bg-yellow-800 hover:bg-yellow-900 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Update</button>
-    </div>
+       <div class="flex items-center mb-10">
+         <label for="twitter" class="w-20 inline-block text-left mr-4 text-gray-500 text-gray-500">Upload New Logo</label>
+         <input onChange={handleChange}  type="file" name="twitter" id="twitter" placeholder="Your Twitter pseudonym" class="border-b-2 border-gray-400 flex-1 py-2 placeholder-gray-300 outline-none focus:border-indigo-400"/>
+       </div>
+       <LinearProgress variant="determinate" value={progress} />
+       <b>Uploaded {progress} %</b>
+       <br />
+       <div class="text-right">
+         <button type="submit" class="py-2 px-6 bg-indigo-600 text-white font-bold rounded">Save</button>
+       </div>
+     </form>
+   </div>
+ </div>
 
-  </div>
-</div>
-        </Container>
+ 
+
+        </>
     )
 }
 

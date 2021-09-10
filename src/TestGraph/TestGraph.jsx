@@ -87,6 +87,17 @@ const chartConfig = {
     ]
   },
   options: {
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }}},
      legend: {
        position: 'bottom',
         labels: {
@@ -226,7 +237,12 @@ const TestGraph = () => {
      chartInstance.data.datasets[2].data = realData;
     chartInstance.update();
   };
+ 
 
+setInterval(function(){
+    
+    console.log('called database once')
+}, 30000)
   const onButtonClick = (e) => {
     e.preventDefault()
       var x, y, z;
@@ -281,7 +297,7 @@ const TestGraph = () => {
             console.log(data)
             setBatch(data)
         })
-       
+     
        
     }
    
@@ -295,6 +311,7 @@ const TestGraph = () => {
              tempData.push(doc.data().temp_points[i].value)
            }
      setRealData(tempData)
+    
     })
         db.collection('recipeeData').where('rid', '==', `${rid}`).onSnapshot(doc => {
             const data = firebaseLooper(doc)
@@ -371,7 +388,7 @@ const TestGraph = () => {
             xs={12}>
                   <FormControl  className='form-select mt-1 block w-full'  fullWidth variant="outlined">
                   <InputLabel id="demo-simple-select-outlined-label">Select Batch</InputLabel>
-                   <Select disabled={batch.length === 0} required label='Select Batch'  fullWidth variant='outlined' onChange={(e) => {handleBatchChange(e) }}>
+                   <Select disabled={batch.length === 0} label='Select Batch'  fullWidth variant='outlined' onChange={(e) => {handleBatchChange(e) }}>
                       
                     {
                         batch.map(data => (

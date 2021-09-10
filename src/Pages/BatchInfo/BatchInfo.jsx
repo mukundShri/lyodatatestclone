@@ -88,7 +88,7 @@ export default function BatchInfo({match}) {
        {/* <Typography variant='h4' align='left'><b>{mTitle}</b></Typography> */}
        <div style={{display: 'flex', justifyContent: 'space-between'}}>
          <div>
-           <Typography variant='h2' align='left'><b>Batch Report</b></Typography>
+           <Typography style={{color: 'black'}} variant='h1' align='left'><b>Batch Report</b></Typography>
            <Typography variant='body-2' align='left'>These are all the batch reports</Typography>
          </div>
          <div>
