@@ -74,6 +74,7 @@
     "react-dropzone": "^11.3.2",
     "react-feather": "^2.0.9",
     "react-fontawesome": "^1.7.1",
+    "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.1.0",
     "react-html-table-to-excel": "^2.0.0",
     "react-icons": "^4.2.0",

@@ -19,7 +19,7 @@ import { AuthProvider, useAuth } from "./components/context/AuthContext";
 import ForgotPass from "./components/ForgotPass/ForgotPass";
 import ContentsData from "./Pages/ContentsData/ContentsData";
 import Page from "./components/Page";
-import Tests from "./Pages/Tests/Tests";
+
 import AccountDetails from "./components/Account/AccountDetails";
 import NotFoundView from "./Pages/Error/NotFoundView";
 import BatchInfo from "./Pages/BatchInfo/BatchInfo";
@@ -54,7 +54,7 @@ import UserManual from "./Pages/user_manual/UserManual";
 import WorkFlow from "./Pages/MiddlePage/WorkFlow";
 import Whiteboard from "./components/Whiteboard/Whiteboard";
 import ModelThreeD from "./components/3DModel/ModelThreeD";
-import TestVideo from "./VideoCallModel/TestVideo";
+import Tests from "./Pages/Tests/Tests";
 import EntryPage from "./VideoCallModel/EntryPage";
 import DQNew from "./Pages/DQNew/DQNew";
 import DQContent from "./Pages/DQNew/DQContent";
@@ -160,6 +160,7 @@ function App() {
                    <AppRoute path='/DQR/:id/Attachments' exact component={DQRAttachments} layout={MainLayout} />
                  <AppRoute path='/DQ/:id/Abbreviations' exact component={Abbreviations} layout={MainLayout} />
                  <AppRoute path='/DQR/:id/Safety' exact component={DQRSafety} layout={MainLayout} />
+                 <AppRoute path='/Tests' exact component={Tests} layout={MainLayout} />
                  <AppRoute path='/DQR/:id/Print' exact component={PrintScreen} layout={MainLayout} />
       </Switch>
     </Router>
