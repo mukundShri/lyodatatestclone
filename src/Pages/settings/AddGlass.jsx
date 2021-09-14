@@ -29,7 +29,7 @@ e.preventDefault()
     return (
         <>
         <div>
-   <div class="md:grid md:grid-cols- md:gap-6">
+   <div >
      
      <div class="mt-5 md:mt-0 md:col-span-2">
        <form onSubmit={updateGlass} action="#" method="POST">

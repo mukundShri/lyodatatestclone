@@ -24,7 +24,7 @@ export default function Tests() {
             <div className="flex items-center justify-center w-full h-screen px-6 bg-black md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12">
               <div class="w-full mt-40 text-white h-100">
               <div style={{display: 'flex', justifyContent: 'center'}}>
-                   <img src="https://www.hakimgroup.co.uk/wp-content/uploads/2015/10/logo.png" width='50%' />
+                   <img src="" width='50%' />
                
                </div>
            
