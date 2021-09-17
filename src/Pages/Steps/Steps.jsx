@@ -12,6 +12,7 @@ import OutlinedTimeline from './Timeline';
 import StepCarousel from './StepCarousel';
 import Carousel from 'react-bootstrap/Carousel'
 import AddSteps from './AddSteps';
+
 const useStyles = makeStyles((theme) =>( {
     add: {
      
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) =>( {
     backButton: {
         backgroundColor: "black",
         color: "white",
-        borderRadius: "20px",
+        borderRadius: "17px",
         marginRight: "30px",
         marginLeft: "20px",
     },
@@ -58,6 +59,8 @@ const Steps = ({match}) => {
     const [steps, setSteps] = useState([{}])
     const [checked, setChecked] = useState(true)
     const [open, setOpen] = useState(false)
+    const [annotation, setAnnotation] = useState([])
+    const [annotations, setAnnotations] = useState([])
     const dbRef =   db.collection('stepData').where('manual_id', '==', `${match.params.id}`)
 
     const handleReturn = () => {
@@ -82,7 +85,27 @@ const Steps = ({match}) => {
 
     }, [])
     
+ function onChange(annotation){
+   setAnnotation(annotation)
+ }
 
+ const onSubmit = (annotation) => {
+  const { geometry, data } = annotation
+  setAnnotation({})
+  setAnnotations(annotations.concat({
+    geometry,
+    data: {
+      ...data,
+      id: Math.random()
+    }
+  }))
+  // this.setState({
+  //   annotation: {},
+  //   annotations: this.state.annotations.concat({
+    
+  //   })
+  // })
+}
 
     return (
         <Page title="Steps">
@@ -141,6 +164,7 @@ const Steps = ({match}) => {
       src={data.url}
       alt="First slide"
     />
+
     :
     data.format === 'video'?
     <div>

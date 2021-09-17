@@ -54,7 +54,7 @@ const EditVideoCall = () => {
            
 
 
-<div class="bg-white border-4 container  ml-10 w-1/2">
+<div class="bg-white border-4 container  ml-10 ">
   <h6>Update Video Call Details</h6>
   <div class="bg-white  rounded">
     <form action="" onSubmit={handleUpdate}>
